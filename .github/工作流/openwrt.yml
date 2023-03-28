@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # <https://github.com/LemoFire/autoOpenWrt>
 
-name: OpenWrt
+name: OpenWrt-CI
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
     - release/*
 jobs:
 
-   build_openwrt: 
+  build_openwrt: 
      name: Build OpenWrt firmware
      runs-on: ubuntu-latest
      if: github.event.repository.owner.id == github.event.sender.id
