@@ -10,18 +10,21 @@
 name: OpenWrt
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+    - main
+    - release/*
+jobs:
 
-
-
-    name: Build OpenWrt firmware
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-
-    steps:
+   build_openwrt: 
+     name: Build OpenWrt firmware
+     runs-on: ubuntu-latest
+     if: github.event.repository.owner.id == github.event.sender.id
+     steps:
+    
       - name: Checkout
         uses: actions/checkout@master
-
+ 
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
