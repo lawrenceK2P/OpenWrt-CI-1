@@ -12,11 +12,7 @@ name: OpenWrt
 on:
   workflow_dispatch:
 
-on:
-  push:
-    branches:
-    - main
-    - release/*
+
 
     name: Build OpenWrt firmware
     runs-on: ubuntu-latest
